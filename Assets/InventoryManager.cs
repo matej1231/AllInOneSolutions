@@ -13,8 +13,6 @@ public class InventoryManager : MonoBehaviour
 
     public static event Action<int> UpdateUIEvent;
 
-    //public bool isAlreadyClicked = false;
-
     private void Awake()
     {
         if (instance == null) instance = this;
@@ -38,20 +36,13 @@ public class InventoryManager : MonoBehaviour
     public void SwapGameObjectsInArray(int previousButtonID, int buttonID)
     {
         GameObject temp1 = null;
-        GameObject temp2 = null;
-        for (int i = 0; i < InventoryGameObjects.Length; i++)
-        {
-            if (i == previousButtonID)
-            {
-                temp1 = InventoryGameObjects[i];
-            }
-            else if (i == buttonID)
-            {
-                temp2 = InventoryGameObjects[i];
-            }
-        }
-        GameObject temp = temp1;
-        temp1 = temp2;
-        temp2 = temp;
+
+        temp1 = InventoryGameObjects[previousButtonID];
+        InventoryGameObjects[previousButtonID] = InventoryGameObjects[buttonID];
+        UpdateUIEvent?.Invoke(previousButtonID);
+        InventoryGameObjects[buttonID] = temp1;
+        UpdateUIEvent?.Invoke(buttonID);
+
+        temp1 = null;
     }
 }

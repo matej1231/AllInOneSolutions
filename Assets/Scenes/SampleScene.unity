@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 23627549}
   - component: {fileID: 23627551}
   - component: {fileID: 23627550}
-  m_Layer: 6
+  m_Layer: 5
   m_Name: TextEmpty
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -214,7 +214,7 @@ GameObject:
   - component: {fileID: 69549690}
   m_Layer: 6
   m_Name: InventorySlot (5)
-  m_TagString: Untagged
+  m_TagString: ButtonGameObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -311,7 +311,6 @@ MonoBehaviour:
   textGameObject: {fileID: 261106731}
   image: {fileID: 1575231852}
   buttonID: 5
-  previousButtonID: 0
   rectTransform: []
 --- !u!114 &69549692
 MonoBehaviour:
@@ -362,7 +361,7 @@ GameObject:
   - component: {fileID: 83448058}
   - component: {fileID: 83448060}
   - component: {fileID: 83448059}
-  m_Layer: 6
+  m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -498,7 +497,7 @@ GameObject:
   - component: {fileID: 223621998}
   - component: {fileID: 223622000}
   - component: {fileID: 223621999}
-  m_Layer: 6
+  m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -756,7 +755,7 @@ GameObject:
   - component: {fileID: 261106732}
   - component: {fileID: 261106734}
   - component: {fileID: 261106733}
-  m_Layer: 6
+  m_Layer: 5
   m_Name: TextEmpty
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1088,7 +1087,7 @@ GameObject:
   - component: {fileID: 377139534}
   - component: {fileID: 377139536}
   - component: {fileID: 377139535}
-  m_Layer: 6
+  m_Layer: 5
   m_Name: PlaceholderImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1333,7 +1332,7 @@ GameObject:
   - component: {fileID: 388992588}
   - component: {fileID: 388992590}
   - component: {fileID: 388992589}
-  m_Layer: 6
+  m_Layer: 5
   m_Name: PlaceholderImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1764,7 +1763,7 @@ GameObject:
   - component: {fileID: 555525772}
   m_Layer: 6
   m_Name: InventorySlot (1)
-  m_TagString: Untagged
+  m_TagString: ButtonGameObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1861,7 +1860,6 @@ MonoBehaviour:
   textGameObject: {fileID: 23627548}
   image: {fileID: 1538810527}
   buttonID: 1
-  previousButtonID: 0
   rectTransform: []
 --- !u!114 &555525774
 MonoBehaviour:
@@ -1912,7 +1910,7 @@ GameObject:
   - component: {fileID: 580582986}
   - component: {fileID: 580582988}
   - component: {fileID: 580582987}
-  m_Layer: 6
+  m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2048,7 +2046,7 @@ GameObject:
   - component: {fileID: 707585691}
   - component: {fileID: 707585693}
   - component: {fileID: 707585692}
-  m_Layer: 6
+  m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2270,7 +2268,7 @@ GameObject:
   - component: {fileID: 769591268}
   m_Layer: 6
   m_Name: InventorySlot (2)
-  m_TagString: Untagged
+  m_TagString: ButtonGameObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2367,7 +2365,6 @@ MonoBehaviour:
   textGameObject: {fileID: 816290193}
   image: {fileID: 377139533}
   buttonID: 2
-  previousButtonID: 0
   rectTransform: []
 --- !u!114 &769591270
 MonoBehaviour:
@@ -2418,7 +2415,7 @@ GameObject:
   - component: {fileID: 816290194}
   - component: {fileID: 816290196}
   - component: {fileID: 816290195}
-  m_Layer: 6
+  m_Layer: 5
   m_Name: TextEmpty
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2559,7 +2556,7 @@ GameObject:
   - component: {fileID: 836949687}
   - component: {fileID: 836949689}
   - component: {fileID: 836949688}
-  m_Layer: 6
+  m_Layer: 5
   m_Name: PlaceholderImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2670,7 +2667,7 @@ GameObject:
   - component: {fileID: 894512623}
   m_Layer: 6
   m_Name: InventorySlot
-  m_TagString: Untagged
+  m_TagString: ButtonGameObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2711,7 +2708,6 @@ MonoBehaviour:
   textGameObject: {fileID: 938154544}
   image: {fileID: 1569529222}
   buttonID: 0
-  previousButtonID: 0
   rectTransform: []
 --- !u!114 &894512621
 MonoBehaviour:
@@ -2818,7 +2814,7 @@ GameObject:
   - component: {fileID: 919457728}
   - component: {fileID: 919457730}
   - component: {fileID: 919457729}
-  m_Layer: 6
+  m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2954,7 +2950,7 @@ GameObject:
   - component: {fileID: 938154545}
   - component: {fileID: 938154547}
   - component: {fileID: 938154546}
-  m_Layer: 6
+  m_Layer: 5
   m_Name: TextEmpty
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3357,7 +3353,7 @@ GameObject:
   - component: {fileID: 1176652669}
   m_Layer: 6
   m_Name: InventorySlot (3)
-  m_TagString: Untagged
+  m_TagString: ButtonGameObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3454,7 +3450,6 @@ MonoBehaviour:
   textGameObject: {fileID: 1855331391}
   image: {fileID: 836949686}
   buttonID: 3
-  previousButtonID: 0
   rectTransform: []
 --- !u!114 &1176652671
 MonoBehaviour:
@@ -4042,7 +4037,7 @@ GameObject:
   - component: {fileID: 1535802978}
   - component: {fileID: 1535802980}
   - component: {fileID: 1535802979}
-  m_Layer: 6
+  m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4178,7 +4173,7 @@ GameObject:
   - component: {fileID: 1538810528}
   - component: {fileID: 1538810530}
   - component: {fileID: 1538810529}
-  m_Layer: 6
+  m_Layer: 5
   m_Name: PlaceholderImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4253,7 +4248,7 @@ GameObject:
   - component: {fileID: 1569529223}
   - component: {fileID: 1569529225}
   - component: {fileID: 1569529224}
-  m_Layer: 6
+  m_Layer: 5
   m_Name: PlaceholderImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4328,7 +4323,7 @@ GameObject:
   - component: {fileID: 1575231853}
   - component: {fileID: 1575231855}
   - component: {fileID: 1575231854}
-  m_Layer: 6
+  m_Layer: 5
   m_Name: PlaceholderImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4612,7 +4607,7 @@ GameObject:
   - component: {fileID: 1673483635}
   m_Layer: 6
   m_Name: InventorySlot (4)
-  m_TagString: Untagged
+  m_TagString: ButtonGameObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4709,7 +4704,6 @@ MonoBehaviour:
   textGameObject: {fileID: 1985261747}
   image: {fileID: 388992587}
   buttonID: 4
-  previousButtonID: 0
   rectTransform: []
 --- !u!114 &1673483637
 MonoBehaviour:
@@ -4969,7 +4963,7 @@ GameObject:
   - component: {fileID: 1855331392}
   - component: {fileID: 1855331394}
   - component: {fileID: 1855331393}
-  m_Layer: 6
+  m_Layer: 5
   m_Name: TextEmpty
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5308,7 +5302,7 @@ GameObject:
   - component: {fileID: 1985261748}
   - component: {fileID: 1985261750}
   - component: {fileID: 1985261749}
-  m_Layer: 6
+  m_Layer: 5
   m_Name: TextEmpty
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5524,6 +5518,10 @@ PrefabInstance:
     - target: {fileID: 3198939810080803364, guid: cac18d86cb4266e4eac9e7de0bc36aba, type: 3}
       propertyPath: m_Layer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3198939810080803364, guid: cac18d86cb4266e4eac9e7de0bc36aba, type: 3}
+      propertyPath: m_TagString
+      value: ButtonGameObjects
       objectReference: {fileID: 0}
     - target: {fileID: 6967894325888737403, guid: cac18d86cb4266e4eac9e7de0bc36aba, type: 3}
       propertyPath: m_Pivot.x

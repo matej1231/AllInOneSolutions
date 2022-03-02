@@ -10,13 +10,14 @@ public class InventorySlotScript : MonoBehaviour, IPointerEnterHandler, IPointer
     public GameObject textGameObject;
     public GameObject image;
 
-    public int buttonID, previousButtonID;
+    public int buttonID;
+    public static int previousButtonID;
 
-    public RectTransform[] rectTransform; //probat prebacit na samo 1 childa
+    public RectTransform[] rectTransform; //prebacit na samo 1 childa
 
     GraphicRaycaster raycast;
     List<RaycastResult> onStartedDraggingResult, onDraggedResults;
-    int layerMask = 6;
+    int layerMaskUIButton = 6;
 
     private void Awake()
     {
@@ -33,7 +34,7 @@ public class InventorySlotScript : MonoBehaviour, IPointerEnterHandler, IPointer
 
     public void UpdateInventoryUI(int id)
     {
-        if (id == buttonID)
+        if (id == buttonID && image.activeSelf == false)
         {
             if (InventoryManager.instance.InventoryGameObjects[buttonID])
             {
@@ -41,7 +42,23 @@ public class InventorySlotScript : MonoBehaviour, IPointerEnterHandler, IPointer
                 image.gameObject.GetComponent<Image>().color = InventoryManager.instance.InventoryGameObjects[buttonID].GetComponent<SpriteRenderer>().color;
                 textGameObject.GetComponentInChildren<TMP_Text>().text = InventoryManager.instance.InventoryGameObjects[buttonID].name;
             }
+        }else if(id == previousButtonID && image.activeSelf)
+        {
+            if(InventoryManager.instance.InventoryGameObjects[previousButtonID] == null)
+            {
+                image.transform.position = this.gameObject.transform.position;
+                image.SetActive(false);
+                //previousButtonID = -1;
+                Debug.Log(previousButtonID);
+                Debug.Log(id);
+            }
         }
+    }
+
+    public void OnSwapUpdateUI()
+    {
+        image.SetActive(false);
+        image.transform.position = this.gameObject.transform.position;
     }
 
     public void DropItemFromInventory()
@@ -60,23 +77,6 @@ public class InventorySlotScript : MonoBehaviour, IPointerEnterHandler, IPointer
         }
     }
 
-    /*public void OnPointerClick(PointerEventData pointerEventData)
-    {
-        if(pointerEventData.button == PointerEventData.InputButton.Right)
-        {
-            if(InventoryManager.instance.isAlreadyClicked == true)
-            {
-                //SWAP
-                
-                InventoryManager.instance.isAlreadyClicked = false;
-            }
-            else
-            {
-                InventoryManager.instance.isAlreadyClicked = true;
-            }
-        }
-    }*/
-
     public void OnBeginDrag(PointerEventData eventData)
     {
         EventSystem.current.RaycastAll(eventData, onStartedDraggingResult);
@@ -84,10 +84,10 @@ public class InventorySlotScript : MonoBehaviour, IPointerEnterHandler, IPointer
         {
             foreach (RaycastResult results in onStartedDraggingResult)
             {
-                if (results.gameObject.layer == layerMask)
+                if (results.gameObject.layer == layerMaskUIButton)
                 {
-                    Debug.Log("Prvi: " + results.gameObject.name);
                     previousButtonID = buttonID;
+                    Debug.Log(previousButtonID);
                 }
             }
         }
@@ -110,12 +110,10 @@ public class InventorySlotScript : MonoBehaviour, IPointerEnterHandler, IPointer
             {
                 foreach (RaycastResult result in onDraggedResults)
                 {
-                    if (result.gameObject.layer == layerMask) //promjenio sam layer placeholderimage svima bili su na UI - ZA DEBUG SAM UKLJUCIO I SLOTU TAJ LAYER
+                    if (result.gameObject.layer == layerMaskUIButton) //promjenio sam layer placeholderimage svima bili su na UI - ZA DEBUG SAM UKLJUCIO I SLOTU TAJ LAYER
                     {
-                        Debug.Log(previousButtonID);
-                        Debug.Log(buttonID);
                         SwapItems(previousButtonID, buttonID);
-                        Debug.Log(result.gameObject.name);
+                        return;
                     }
                 }
             }
