@@ -33,7 +33,7 @@ public class InventoryManager : MonoBehaviour
         }
     }
 
-    public void SwapGameObjectsInArray(int previousButtonID, int buttonID)
+    /*public void SwapGameObjectsInArray(int previousButtonID, int buttonID)
     {
         GameObject temp1 = null;
 
@@ -44,5 +44,5 @@ public class InventoryManager : MonoBehaviour
         UpdateUIEvent?.Invoke(buttonID);
 
         temp1 = null;
-    }
+    }*/
 }

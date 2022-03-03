@@ -5,8 +5,10 @@ using UnityEngine.UI;
 using TMPro;
 using UnityEngine.EventSystems;
 
-public class InventorySlotScript : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler,/* IPointerClickHandler,*/ IBeginDragHandler, IDragHandler, IDropHandler
+public class InventorySlotScript : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler/*, IPointerClickHandler, IBeginDragHandler, IDragHandler, IDropHandler*/
 {
+    [SerializeField] GameObject player;
+
     public GameObject textGameObject;
     public GameObject image;
 
@@ -15,16 +17,16 @@ public class InventorySlotScript : MonoBehaviour, IPointerEnterHandler, IPointer
 
     public RectTransform[] rectTransform; //prebacit na samo 1 childa
 
-    GraphicRaycaster raycast;
-    List<RaycastResult> onStartedDraggingResult, onDraggedResults;
-    int layerMaskUIButton = 6;
+    //GraphicRaycaster raycast;
+    //List<RaycastResult> onStartedDraggingResult, onDraggedResults;
+    //int layerMaskUIButton = 6;
 
     private void Awake()
     {
         rectTransform = GetComponentsInChildren<RectTransform>(true);
-        raycast = GetComponent<GraphicRaycaster>();
-        onDraggedResults = new List<RaycastResult>();
-        onStartedDraggingResult = new List<RaycastResult>();
+        //raycast = GetComponent<GraphicRaycaster>();
+        //onDraggedResults = new List<RaycastResult>();
+        //onStartedDraggingResult = new List<RaycastResult>();
     }
 
     public void Start()
@@ -42,7 +44,7 @@ public class InventorySlotScript : MonoBehaviour, IPointerEnterHandler, IPointer
                 image.gameObject.GetComponent<Image>().color = InventoryManager.instance.InventoryGameObjects[buttonID].GetComponent<SpriteRenderer>().color;
                 textGameObject.GetComponentInChildren<TMP_Text>().text = InventoryManager.instance.InventoryGameObjects[buttonID].name;
             }
-        }else if(id == previousButtonID && image.activeSelf)
+        }/*else if(id == previousButtonID && image.activeSelf)
         {
             if(InventoryManager.instance.InventoryGameObjects[previousButtonID] == null)
             {
@@ -52,32 +54,35 @@ public class InventorySlotScript : MonoBehaviour, IPointerEnterHandler, IPointer
                 Debug.Log(previousButtonID);
                 Debug.Log(id);
             }
-        }
+        }*/
     }
 
-    public void OnSwapUpdateUI()
+    /*public void OnSwapUpdateUI()
     {
         image.SetActive(false);
         image.transform.position = this.gameObject.transform.position;
-    }
+    }*/
 
     public void DropItemFromInventory()
     {
-        if (InventoryManager.instance.InventoryGameObjects[buttonID] != null)
+        if (player)
         {
-            image.SetActive(false);
-            image.transform.position = this.gameObject.transform.position; //za swap WIP
-            InventoryManager.instance.InventoryGameObjects[buttonID].gameObject.SetActive(true);
-            InventoryManager.instance.InventoryGameObjects[buttonID].gameObject.transform.position = new Vector2(InventoryManager.instance.player.transform.position.x + 2, InventoryManager.instance.player.transform.position.y + 2);
-            InventoryManager.instance.InventoryGameObjects[buttonID] = null;
-        }
-        else
-        {
-            Debug.Log("There is no stored gameobject on " + buttonID + ". inventory slot!");
+            if (InventoryManager.instance.InventoryGameObjects[buttonID] != null)
+            {
+                image.SetActive(false);
+                image.transform.position = this.gameObject.transform.position; //za swap WIP
+                InventoryManager.instance.InventoryGameObjects[buttonID].gameObject.SetActive(true);
+                InventoryManager.instance.InventoryGameObjects[buttonID].gameObject.transform.position = new Vector2(InventoryManager.instance.player.transform.position.x + 2, InventoryManager.instance.player.transform.position.y + 2);
+                InventoryManager.instance.InventoryGameObjects[buttonID] = null;
+            }
+            else
+            {
+                Debug.Log("There is no stored gameobject on " + buttonID + ". inventory slot!");
+            }
         }
     }
 
-    public void OnBeginDrag(PointerEventData eventData)
+    /*public void OnBeginDrag(PointerEventData eventData)
     {
         EventSystem.current.RaycastAll(eventData, onStartedDraggingResult);
         if (onStartedDraggingResult.Count >= 1)
@@ -123,7 +128,7 @@ public class InventorySlotScript : MonoBehaviour, IPointerEnterHandler, IPointer
     public void SwapItems(int previousButtonID, int buttonID)
     {
         InventoryManager.instance.SwapGameObjectsInArray(previousButtonID, buttonID);
-    }
+    }*/
 
     public void OnPointerEnter(PointerEventData eventData)
     {
