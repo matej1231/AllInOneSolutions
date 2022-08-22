@@ -6,4 +6,5 @@ https://user-images.githubusercontent.com/38085674/185921348-e9b88be2-4a7d-4d2d-
 
 Part 2
 
-Uploading AllInOneSolutionsPart2.mp4…
+https://user-images.githubusercontent.com/38085674/185921754-5df1f43e-120e-4953-a34b-90f7bcb2c432.mp4
+
